@@ -4,28 +4,8 @@ import ReactDOM from 'react-dom';
 // CSS 
 import './index.css';
 
-const books = [
-    {
-        img: 'https://images-na.ssl-images-amazon.com/images/I/71xUvuJiqgL._AC_UL200_SR200,200_.jpg', 
-        title: 'It ends with us: A novel', 
-        author: 'Paperback'
-    },
-    {
-        img: 'https://images-na.ssl-images-amazon.com/images/I/51MB5SD5GIL._AC_UL200_SR200,200_.jpg', 
-        title: 'Little Blue\'s Truck\'s Halloween', 
-        author: 'Alice Shirtle'
-        },
-    {
-        img: 'https://images-na.ssl-images-amazon.com/images/I/61NdJMwAThS._AC_UL200_SR200,200_.jpg', 
-        title: 'The Body keeps the score: Brain, Mind and Soul', 
-        author: 'Besser Van Der Kolk, MD'
-    }
-];
-// const title = 'I love you to the moon and back'; 
-// const author = 'rejan bajracharya'; 
-// const img = 'https://images-na.ssl-images-amazon.com/images/I/71xUvuJiqgL._AC_UL200_SR200,200_.jpg'; 
-
-// const names = ['rejan', 'rajive', 'god']; 
+import {books} from './books';
+import Book from './Book';
 
 function BookList() {
     // const newBooks = books.map((book, index) => <Book key={index} bookAttr={book}/>);
@@ -38,28 +18,5 @@ function BookList() {
      </section>
     );
 }
-
-const Book = ({img, title, author}) => {
-    //eventHandlers 
-    // onClick, onMouseOver
-
-    const clickHandler = (event) => {
-        console.log('clicked');
-    }
-
-    const complexExample = (author) => {
-       console.log(author);
-    }
-    return (
-        <article className='book' >
-            <img src={img} alt='img'/>
-            <h1>{title}</h1>
-            <h4>{author}</h4>
-            <button type='button' onClick={clickHandler}>Click me</button>
-            <button type='button' onClick={() => complexExample(author)}>Get me an author</button>
-        </article>
-    );
-}
-
 
 ReactDOM.render(<BookList />, document.getElementById('root'));
