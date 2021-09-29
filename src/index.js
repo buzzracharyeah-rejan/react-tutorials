@@ -1,24 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-function Greeting() {
+// CSS 
+import './index.css';
+
+function BookList() {
     return (
-        <>
-            <div>
-                <h1>hello world!</h1>
-                <ul>
-                    <li>
-                        <a href="#">hello world</a>
-                    </li>
-                    <img src="" alt="" />
-                </ul>
-            </div>
-        </>
+     <section className='booklist'>
+         <Books />
+         <Books />
+         <Books />
+         <Books />
+     </section>
     );
 }
 
-// const Greeting = () => {
-//     return React.createElement('div', {}, React.createElement('h1', {}, 'something went wrong!'));
-// }
+const Books = () => {
+    return (
+    <article className='book'>
+       <Image />
+       <Title /> 
+       <Author />
+    </article>
+    );
+}
 
-ReactDOM.render(<Greeting />, document.getElementById('root'));
+const Image = () => <img 
+src="https://images-na.ssl-images-amazon.com/images/I/71xUvuJiqgL._AC_UL200_SR200,200_.jpg" 
+alt="some book" />
+
+const Title = () => <h1>Love you from the sun and moon </h1>; 
+const Author = () => (  
+    <h4 style={{color: 'lime', fontSize: '0.75rem',
+        margin: '0.25rem'}}>
+        Rejan Bajracharya
+    </h4>
+);
+
+ReactDOM.render(<BookList />, document.getElementById('root'));
